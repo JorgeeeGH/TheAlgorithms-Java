@@ -1,7 +1,7 @@
 package com.thealgorithms.maths;
 
 /**
- * Hola, que pasa tio. Esta es mi primera practica
+ * Hola, que pasa tio. Esta es mi primera practica 
  */
 public final class Area {
     private Area() {
