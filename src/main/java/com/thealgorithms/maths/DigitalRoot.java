@@ -2,64 +2,66 @@ package com.thealgorithms.maths;
 
 /**
  * @author <a href="https://github.com/skmodi649">Suraj Kumar Modi</a>
- * You are given a number n. You need to find the digital root of n.
- * DigitalRoot of a number is the recursive sum of its digits until we get a single digit number.
+ * Se te da un número n. Necesitas encontrar la raíz digital de n.
+ * La raíz digital de un número es la suma recursiva de sus dígitos hasta que obtenemos un número de un solo dígito.
  *
- * Test Case 1:
- * Input:
+ * Caso de Prueba 1:
+ * Entrada:
  * n = 1
- * Output:  1
- * Explanation: Digital root of 1 is 1
+ * Salida: 1
+ * Explicación: La raíz digital de 1 es 1
  *
- * Test Case 2:
- * Input:
+ * Caso de Prueba 2:
+ * Entrada:
  * n = 99999
- * Output: 9
- * Explanation: Sum of digits of 99999 is 45
- * which is not a single digit number, hence
- * sum of digit of 45 is 9 which is a single
- * digit number.
- * Algorithm :
- * Step 1 : Define a method digitalRoot(int n)
- * Step 2 : Define another method single(int n)
- * Step 3 : digitalRoot(int n) method takes output of single(int n) as input
- * if(single(int n) <= 9)
- * return single(n)
- * else
- * return digitalRoot(single(n))
- * Step 4 : single(int n) calculates the sum of digits of number n recursively
- * if(n<=9)
- * return n;
- * else
- * return (n%10) + (n/10)
- * Step 5 : In main method simply take n as input and then call digitalRoot(int n) function and
- * print the result
+ * Salida: 9
+ * Explicación: La suma de dígitos de 99999 es 45
+ * que no es un número de un solo dígito, por lo tanto
+ * la suma de dígitos de 45 es 9 que sí es un número
+ * de un solo dígito.
+ * 
+ * Algoritmo:
+ * Paso 1: Definir un método raizDigital(int n)
+ * Paso 2: Definir otro método sumaDigitos(int n)
+ * Paso 3: El método raizDigital(int n) toma la salida de sumaDigitos(int n) como entrada
+ * si(sumaDigitos(int n) <= 9)
+ *     retornar sumaDigitos(n)
+ * sino
+ *     retornar raizDigital(sumaDigitos(n))
+ * Paso 4: sumaDigitos(int n) calcula la suma de los dígitos del número n recursivamente
+ * si(n <= 9)
+ *     retornar n;
+ * sino
+ *     retornar (n % 10) + sumaDigitos(n / 10)
+ * Paso 5: En el método principal simplemente tomar n como entrada y luego llamar a la función raizDigital(int n) e
+ * imprimir el resultado
  */
-final class DigitalRoot {
-    private DigitalRoot() {
+final class RaizDigital {
+    private RaizDigital() {
     }
 
-    public static int digitalRoot(int n) {
-        if (single(n) <= 9) { // If n is already single digit than simply call single method and
-                              // return the value
-            return single(n);
+    public static int raizDigital(int n) {
+        if (sumaDigitos(n) <= 9) { // Si n ya es un dígito único, simplemente llamar al método sumaDigitos y
+                                   // retornar el valor
+            return sumaDigitos(n);
         } else {
-            return digitalRoot(single(n));
+            return raizDigital(sumaDigitos(n));
         }
     }
 
     /**
-     * Time Complexity: O((Number of Digits)^2) Auxiliary Space Complexity:
-     * O(Number of Digits) Constraints: 1 <= n <= 10^7
+     * Complejidad Temporal: O((Número de Dígitos)^2) 
+     * Complejidad de Espacio Auxiliar: O(Número de Dígitos) 
+     * Restricciones: 1 <= n <= 10^7
      */
 
-    // This function is used for finding the sum of the digits of number
-    public static int single(int n) {
-        if (n <= 9) { // if n becomes less than 10 than return n
+    // Esta función se usa para encontrar la suma de los dígitos del número
+    public static int sumaDigitos(int n) {
+        if (n <= 9) { // si n se vuelve menor que 10, entonces retornar n
             return n;
         } else {
-            return (n % 10) + single(n / 10); // n % 10 for extracting digits one by one
+            return (n % 10) + sumaDigitos(n / 10); // n % 10 para extraer dígitos uno por uno
         }
-    } // n / 10 is the number obtained after removing the digit one by one
-    // The Sum of digits is stored in the Stack memory and then finally returned
+    } // n / 10 es el número obtenido después de remover el dígito uno por uno
+    // La suma de dígitos se almacena en la memoria de pila y luego finalmente se retorna
 }
