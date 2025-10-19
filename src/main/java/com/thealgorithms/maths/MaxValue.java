@@ -4,14 +4,14 @@ public final class MaxValue {
     private MaxValue() {
     }
     /**
-     * Returns the greater of two {@code int} values. That is, the result is the
-     * argument closer to the value of {@link Integer#MAX_VALUE}. If the
-     * arguments have the same value, the result is that same value.
-     *
-     * @param a an argument.
-     * @param b another argument.
-     * @return the larger of {@code a} and {@code b}.
-     */
+    * Devuelve el mayor de dos valores {@code int}. Es decir, el resultado es el
+    * argumento más cercano al valor de {@link Integer#MAX_VALUE}. Si los
+    * argumentos tienen el mismo valor, el resultado es ese mismo valor.
+    *
+    * @param a un argumento.
+    * @param b otro argumento.
+    * @return el mayor de {@code a} y {@code b}.
+    */
     public static int max(int a, int b) {
         return a >= b ? a : b;
     }
