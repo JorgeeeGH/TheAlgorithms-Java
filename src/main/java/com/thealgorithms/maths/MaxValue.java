@@ -11,6 +11,8 @@ public final class MaxValue {
     * @param a un argumento.
     * @param b otro argumento.
     * @return el mayor de {@code a} y {@code b}.
+    * 
+    * Nuevo cambio
     */
     public static int max(int a, int b) {
         return a >= b ? a : b;
