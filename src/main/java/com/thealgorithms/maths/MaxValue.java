@@ -13,6 +13,7 @@ public final class MaxValue {
     * @return el mayor de {@code a} y {@code b}.
     * 
     * Nuevo cambio
+    * Otro cambio
     */
     public static int max(int a, int b) {
         return a >= b ? a : b;
